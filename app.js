@@ -108,14 +108,32 @@ const WIZARD = {
 };
 const wiz = { light: "", subject: "", intent: "" };
 
+function wizardPick(data) {
+  if (!wiz.light || !wiz.subject || !wiz.intent) return null;
+  const exact = WIZARD.map[`${wiz.light}-${wiz.subject}-${wiz.intent}`];
+  const loose = WIZARD.map[`${wiz.light}-${wiz.subject}-record`];
+  let ids = exact || loose || [];
+  if (!ids.length) {
+    if (wiz.light === "night") ids = data.scenes.filter((s) => s.category === "night").slice(0, 3).map((s) => s.id);
+    else if (wiz.subject === "water") ids = data.scenes.filter((s) => s.category === "water").map((s) => s.id);
+    else if (wiz.subject === "person") ids = data.scenes.filter((s) => s.category === "people").slice(0, 3).map((s) => s.id);
+    else ids = data.scenes.filter((s) => s.common).slice(0, 3).map((s) => s.id);
+  }
+  return ids;
+}
+
 function wizardHtml(data) {
   const group = (label, key, options) => `<div><p class="eyebrow">${label}</p><div class="chips">${options.map(([id, t]) =>
-    `<button class="chip ${wiz[key] === id ? "active" : ""}" data-wiz="${key}" data-val="${id}">${esc(t)}</button>`).join("")}</div></div>`;
-  const ids = WIZARD.map[`${wiz.light}-${wiz.subject}-${wiz.intent}`] || WIZARD.map[`${wiz.light}-${wiz.subject}-record`] || [];
-  const found = ids.map((id) => data.scenes.find((s) => s.id === id)).filter(Boolean);
+    `<button type="button" class="chip ${wiz[key] === id ? "active" : ""}" data-wiz="${key}" data-val="${id}">${esc(t)}</button>`).join("")}</div></div>`;
+  const ids = wizardPick(data);
+  const found = ids ? ids.map((id) => data.scenes.find((s) => s.id === id)).filter(Boolean) : [];
+  const ready = Boolean(ids);
   return `<section class="card wizard">
-    <h2>十秒決定拍哪一場</h2>
-    <p>光線、主體、意圖各選一個。</p>
+    <div class="wizard-head">
+      <h2>十秒決定拍哪一場</h2>
+      ${ready ? `<button type="button" class="chip" data-wiz-clear>清除</button>` : ""}
+    </div>
+    <p>${ready ? "下面的場景已改成這幾個建議。" : "光線、主體、意圖各選一個，下面的場景會立刻篩選。"}</p>
     <div class="grid-4" style="grid-template-columns:1fr;margin-top:16px">
       ${group("光線", "light", WIZARD.lights)}
       ${group("主體", "subject", WIZARD.subjects)}
@@ -127,6 +145,8 @@ function wizardHtml(data) {
 }
 
 function matches(s) {
+  const picked = state.data ? wizardPick(state.data) : null;
+  if (picked && !picked.includes(s.id)) return false;
   if (state.filter === "favorites" && !state.fav.has(s.id)) return false;
   if (state.filter !== "all" && state.filter !== "favorites" && s.category !== state.filter) return false;
   const q = state.q.trim().toLowerCase();
@@ -136,7 +156,9 @@ function matches(s) {
 }
 
 function home(data) {
-  const list = data.scenes.filter(matches);
+  const picked = wizardPick(data);
+  const base = picked ? picked.map((id) => data.scenes.find((s) => s.id === id)).filter(Boolean) : data.scenes;
+  const list = base.filter(matches);
   const cats = [{ id: "all", label: "全部" }, { id: "favorites", label: "收藏" }, ...data.categories];
   return `<section class="hero">
       <div class="eyebrow">Field guide · v2 校正版</div>
@@ -150,10 +172,9 @@ function home(data) {
       <span class="muted">${list.length} 場</span>
     </div>
     <div class="filters">${cats.map((c) =>
-      `<button class="chip ${state.filter === c.id ? "active" : ""}" data-filter="${c.id}">${esc(c.label)}${c.id === "favorites" ? " " + state.fav.size : ""}</button>`).join("")}</div>
-    <div class="chips" style="margin:8px 0 16px">
-      <button class="chip" id="exportFav">匯出收藏</button>
-      <label class="chip">匯入收藏<input id="importFav" type="file" accept="application/json" hidden></label>
+      `<button type="button" class="chip ${state.filter === c.id ? "active" : ""}" data-filter="${c.id}">${esc(c.label)}${c.id === "favorites" ? " " + state.fav.size : ""}</button>`).join("")}
+      <button type="button" class="chip" id="exportFav">匯出收藏</button>
+      <label class="chip">匯入收藏<input id="importFav" type="file" accept="application/json"></label>
     </div>
     ${list.length ? `<div class="scene-grid">${list.map(sceneCard).join("")}</div>` :
       `<div class="empty">沒有符合的場景。試試「夜」「水」「人像」。</div>`}`;
@@ -303,6 +324,11 @@ document.addEventListener("click", (e) => {
   if (f) { e.preventDefault(); toggleFav(f.dataset.fav); return; }
   const w = e.target.closest("[data-wiz]");
   if (w) { wiz[w.dataset.wiz] = w.dataset.val; render(); return; }
+  if (e.target.closest("[data-wiz-clear]")) {
+    wiz.light = ""; wiz.subject = ""; wiz.intent = "";
+    render();
+    return;
+  }
   const th = e.target.closest("[data-theme]");
   if (th && th.tagName === "BUTTON") setTheme(th.dataset.theme);
 });
