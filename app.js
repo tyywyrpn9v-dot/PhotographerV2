@@ -5,7 +5,15 @@ const app = $("#app");
 const state = { data: null, q: "", filter: "all", fav: new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]")) };
 
 function esc(s) {
-  return String(s ?? "").replace(/[&<>"']/g, (m) => ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#039;" }[m]));
+  return String(s ?? "").replace(/[&<>"']/g, (m) =>
+    ({
+      "&": "\u0026amp;",
+      "<": "\u0026lt;",
+      ">": "\u0026gt;",
+      '"': "\u0026quot;",
+      "'": "\u0026#39;",
+    })[m],
+  );
 }
 
 function route() {

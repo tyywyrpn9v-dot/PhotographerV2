@@ -50,13 +50,13 @@
   --theme-color: #fff;
 }
 * { box-sizing: border-box; }
-html, body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 "PingFang TC", "Noto Sans TC", "Hiragino Sans GB", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-h1, h2, h3 { font-family: "Iowan Old Style", "Songti TC", "Noto Serif TC", Georgia, serif; letter-spacing: -0.03em; text-wrap: balance; font-weight: 600; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 "Figtree", "Noto Sans TC", "PingFang TC", "Helvetica Neue", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: "Figtree", "Noto Sans TC", "PingFang TC", sans-serif; letter-spacing: -0.02em; text-wrap: balance; font-weight: 600; }
 a { color: inherit; text-decoration: none; }
 button, [role="button"] { cursor: pointer; font: inherit; }
 .top { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: color-mix(in oklab, var(--bg) 90%, transparent); backdrop-filter: blur(8px); }
 .top-inner { max-width: 1100px; margin: auto; padding: 10px 16px; display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; }
-.brand { font-family: "Iowan Old Style", "Songti TC", serif; font-size: 18px; }
+.brand { font-family: "Figtree", "Noto Sans TC", "PingFang TC", sans-serif; font-size: 18px; font-weight: 600; }
 nav { display: flex; gap: 6px; align-items: center; }
 nav > a { height: 40px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 999px; color: var(--muted); }
 nav > a.active { background: var(--accent); color: var(--accent-fg); }
@@ -71,7 +71,7 @@ nav > a.active { background: var(--accent); color: var(--accent-fg); }
 @media (min-width: 800px) { .grid-4 { grid-template-columns: 1fr 1fr 2fr; } }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; box-shadow: var(--shadow); }
 .card h3 { margin: 0 0 6px; font-size: 13px; color: var(--subtle-fg); font-family: inherit; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
-.card .big { font-family: "Iowan Old Style", "Songti TC", serif; font-size: 20px; margin: 0 0 8px; }
+.card .big { font-family: "Figtree", "Noto Sans TC", "PingFang TC", sans-serif; font-size: 20px; font-weight: 600; margin: 0 0 8px; }
 .card p { margin: 0; color: var(--muted); font-size: 14px; }
 .lenses { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 @media (min-width: 640px) { .lenses { grid-template-columns: repeat(4, 1fr); } }
