@@ -1,0 +1,17 @@
+{
+  "name": "iPhone 18 Pro 攝影參數指南",
+  "short_name": "18 Pro 指南",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f1ec",
+  "theme_color": "#1c1b19",
+  "lang": "zh-Hant",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,2393 @@
+{
+  "version": 2,
+  "hardware": {
+    "apertures": [
+      "f/1.48",
+      "f/1.8",
+      "f/2.8",
+      "f/4.0"
+    ],
+    "shutterNative": "約 1 秒 ～ 1/1600 秒",
+    "shutterNote": "以相機實際刻度為準（部分韌體可顯示更快）。超過 1 秒不是 Pro 快門，而是夜間模式或第三方 App。",
+    "styles": "Photographic Styles 3：色盤（Natural、Luminous、Gold、Amber、Light、Quiet、Dramatic、Vibrant 等）＋ Tone／Color pad ＋ Texture（Standard、Soft Skin、Glow、Film）＋ Grain。",
+    "formats": "日常 24MP HEIF；日光細節 48MP HEIF Max；要後期用 ProRAW。夜景手持優先 24MP。",
+    "globalDefaults": [
+      "閃光燈預設關閉，除非要補光或凍結近距。",
+      "比例 4:3 保留最多像素，16:9 只在構圖需要時用。",
+      "格線與水平儀建議常開。",
+      "光學光圈只存在於 1x 主鏡；人像 Depth 是計算景深，兩者不要當成同一個滑桿。"
+    ]
+  },
+  "lenses": {
+    "0.5x": {
+      "mm": "13mm",
+      "aperture": "f/2.2 固定",
+      "note": "超廣角。邊緣易變形，近拍人像慎用。"
+    },
+    "1x": {
+      "mm": "24mm",
+      "aperture": "f/1.48 / 1.8 / 2.8 / 4.0 可變",
+      "note": "主鏡。唯一可手動光圈；弱光首選 f/1.48。"
+    },
+    "2x": {
+      "mm": "48mm",
+      "aperture": "主鏡裁切，跟隨可變光圈",
+      "note": "人像、街拍常用。變形少於 1x。"
+    },
+    "4x": {
+      "mm": "100mm",
+      "aperture": "f/2.8 固定",
+      "note": "長焦棱鏡。月亮、壓縮透視、遠距人像。"
+    }
+  },
+  "limits": {
+    "native": "原生相機可完成",
+    "night-mode": "需夜間模式長曝",
+    "third-party": "超過 1s 建議第三方 App",
+    "tripod": "建議腳架"
+  },
+  "params": {
+    "aperture": "鏡頭光圈（光學）",
+    "depth": "人像景深（計算）",
+    "shutter": "快門（原生 Pro）",
+    "night": "夜間模式",
+    "ev": "曝光補償",
+    "focus": "對焦",
+    "wb": "白平衡",
+    "zoom": "鏡頭／變焦",
+    "mp": "解析度",
+    "format": "格式",
+    "style": "攝影風格",
+    "texture": "質感 Texture",
+    "grain": "顆粒 Grain",
+    "tone": "色調 Tone",
+    "histogram": "長條圖",
+    "live": "原況照片",
+    "burst": "連拍",
+    "timer": "計時器",
+    "grid": "格線／水平儀",
+    "portrait-mode": "人像模式",
+    "macro": "微距",
+    "tripod": "腳架",
+    "flash": "閃光燈",
+    "aspect": "畫面比例"
+  },
+  "categories": [
+    {
+      "id": "light",
+      "label": "光線"
+    },
+    {
+      "id": "night",
+      "label": "夜拍"
+    },
+    {
+      "id": "water",
+      "label": "水"
+    },
+    {
+      "id": "people",
+      "label": "人物"
+    },
+    {
+      "id": "place",
+      "label": "風景"
+    },
+    {
+      "id": "motion",
+      "label": "動態"
+    },
+    {
+      "id": "still",
+      "label": "靜物"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "sunrise",
+      "title": "黎明／日出",
+      "category": "light",
+      "common": true,
+      "summary": "保天空高光，1x 小光圈可做太陽星芒。",
+      "lenses": [
+        "1x",
+        "0.5x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "曝光",
+          "value": "−0.3～−1.0"
+        },
+        {
+          "label": "光圈",
+          "value": "f/2.8–4.0"
+        },
+        {
+          "label": "鏡頭",
+          "value": "1x"
+        }
+      ],
+      "must": [
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −1.0",
+          "why": "太陽與雲的高光比地面亮很多，先保天空再決定要不要剪影。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "螢幕在晨光下不可靠，看長條圖右端是否貼邊。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/2.8–4.0（1x）",
+          "why": "風景要前後都清楚；f/4 也較容易讓太陽出現星芒。"
+        },
+        {
+          "id": "zoom",
+          "value": "1x；大場景再加 0.5x",
+          "why": "主鏡畫質與光圈控制最好。0.5x 只在需要覆蓋時用。"
+        },
+        {
+          "id": "focus",
+          "value": "點兩下鎖遠景",
+          "why": "自動對焦容易被前景草或欄杆搶走。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "光線足夠、手機穩定時保留裁切空間。"
+        },
+        {
+          "id": "style",
+          "value": "Natural 或 Gold",
+          "why": "Natural 保晨霧層次；Gold 加強暖色。避免 Vibrant 把天空做成塑膠藍。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB 或日光",
+          "why": "想保留冷藍黎明用日光；想更暖用 AWB。"
+        },
+        {
+          "id": "format",
+          "value": "HEIF Max 或 ProRAW",
+          "why": "高光對比較大，後期有機會救回雲的細節。"
+        }
+      ],
+      "flow": [
+        "開長條圖與水平儀",
+        "1x 對焦遠景",
+        "壓曝光至天空未爆",
+        "需要星芒再收到 f/4"
+      ],
+      "notes": [
+        "日出前後 20 分鐘光線每分鐘都在變，同一構圖連拍。",
+        "想要剪影：曝光再降，不要對暗部測光。",
+        "光學光圈只在 1x 有效；切到 0.5x 就變 f/2.2 固定。"
+      ]
+    },
+    {
+      "id": "blue-sky",
+      "title": "藍天",
+      "category": "light",
+      "common": false,
+      "summary": "略降曝光讓藍天飽和，白雲不要死白。",
+      "lenses": [
+        "1x",
+        "0.5x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "曝光",
+          "value": "−0.3～−0.7"
+        },
+        {
+          "label": "光圈",
+          "value": "f/2.8–4.0"
+        },
+        {
+          "label": "白平衡",
+          "value": "日光"
+        }
+      ],
+      "must": [
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −0.7",
+          "why": "自動測光常把藍天拍成發白的亮灰。"
+        },
+        {
+          "id": "wb",
+          "value": "日光",
+          "why": "固定日光色溫，藍才穩定，不會被 AWB 抽成青灰。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/2.8–4.0（風景）",
+          "why": "遠近都要清楚時收到小光圈；拍人襯藍天則改 f/1.8。"
+        },
+        {
+          "id": "focus",
+          "value": "點兩下主體",
+          "why": "對主體曝光與對焦，不要對天空。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "日光充足，細節與裁切都划算。"
+        },
+        {
+          "id": "style",
+          "value": "Natural；飽和不夠再 Vibrant、Tone −5～−15",
+          "why": "Vibrant 很容易過。先 Natural 再微量加。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "白雲一爆就沒有層次。"
+        }
+      ],
+      "flow": [
+        "白平衡改日光",
+        "對主體對焦",
+        "降半檔曝光",
+        "看長條圖白雲是否貼右"
+      ],
+      "notes": [
+        "iPhone 沒有偏光鏡，藍天濃度主要靠曝光與色盤，不要靠後期猛加飽和。",
+        "建築或山放在下三分之一，天空要有雲才耐看。"
+      ]
+    },
+    {
+      "id": "overcast",
+      "title": "陰天",
+      "category": "light",
+      "common": false,
+      "summary": "柔光日。略加曝光，風格用 Luminous，不要硬拉對比。",
+      "lenses": [
+        "1x",
+        "2x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "曝光",
+          "value": "+0.3～+0.7"
+        },
+        {
+          "label": "風格",
+          "value": "Luminous"
+        },
+        {
+          "label": "光圈",
+          "value": "f/1.8–2.8"
+        }
+      ],
+      "must": [
+        {
+          "id": "ev",
+          "value": "+0.3 ～ +0.7",
+          "why": "陰天測光偏暗，但加太多天空會變一張白紙。"
+        },
+        {
+          "id": "style",
+          "value": "Luminous 或 Light",
+          "why": "陰天本來就平，靠提亮與通透，不要 Dramatic 硬做對比。"
+        },
+        {
+          "id": "focus",
+          "value": "點兩下主體",
+          "why": "低對比時自動對焦會遊移。"
+        }
+      ],
+      "options": [
+        {
+          "id": "tone",
+          "value": "+5 ～ +15",
+          "why": "輕輕提亮，維持柔和。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.8（人／物）或 f/4（風景）",
+          "why": "按主體選景深。"
+        },
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "散射光均勻，高像素仍乾淨。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB",
+          "why": "灰天色溫不穩，AWB 通常比手動準。"
+        }
+      ],
+      "flow": [
+        "風格切 Luminous",
+        "對主體對焦",
+        "加 1/3～2/3 檔曝光",
+        "看天空有沒有細節"
+      ],
+      "notes": [
+        "陰天是拍人像、食物、絲絹流水的好時光。",
+        "前景放鮮色植物或衣物，畫面才不會整張灰。"
+      ]
+    },
+    {
+      "id": "sunset",
+      "title": "夕陽／日落",
+      "category": "light",
+      "common": true,
+      "summary": "大幅壓曝光保橘色高光；1x f/4 可做太陽星芒。",
+      "lenses": [
+        "1x",
+        "2x",
+        "4x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "曝光",
+          "value": "−0.7～−1.3"
+        },
+        {
+          "label": "光圈",
+          "value": "f/4.0"
+        },
+        {
+          "label": "風格",
+          "value": "Gold／Amber"
+        }
+      ],
+      "must": [
+        {
+          "id": "ev",
+          "value": "−0.7 ～ −1.3",
+          "why": "優先保留太陽與彩霞。前景暗成剪影通常比硬拉陰影自然。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "太陽一爆就只剩白洞。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/4.0（要星芒或大景深）",
+          "why": "六葉光圈在小光圈下最容易形成星芒。只要虛化則改 f/1.8。"
+        },
+        {
+          "id": "focus",
+          "value": "點兩下遠景或太陽附近",
+          "why": "鎖定無限遠，避免對到欄杆。"
+        },
+        {
+          "id": "zoom",
+          "value": "1x 大景；2x／4x 放大太陽",
+          "why": "4x 光學把太陽變大，比數碼變焦乾淨。"
+        }
+      ],
+      "options": [
+        {
+          "id": "style",
+          "value": "Gold 或 Amber",
+          "why": "強化金與橙，不要再用 Tone 狂壓。"
+        },
+        {
+          "id": "tone",
+          "value": "−10 ～ −20",
+          "why": "加深暮色，但看長條圖留一點高光層次。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB；更暖可改多雲",
+          "why": "多雲預設約 6500K，會讓夕陽更橘。"
+        },
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "天光尚足時值得。"
+        }
+      ],
+      "flow": [
+        "開長條圖",
+        "1x 或 4x 構圖",
+        "壓曝光至太陽未全爆",
+        "要星芒收到 f/4"
+      ],
+      "notes": [
+        "日落前 20–30 分鐘開始拍，藍調之後再拍一輪。",
+        "不要長時間讓太陽直射鏡頭。"
+      ],
+      "recipe": "Gold · Tone −15 · Color +10 · Texture Standard · Grain 關"
+    },
+    {
+      "id": "milky-way",
+      "title": "星空／銀河",
+      "category": "night",
+      "common": true,
+      "summary": "原生快門最長約 1 秒，不夠。必須腳架 + 夜間模式最長曝光。",
+      "lenses": [
+        "1x"
+      ],
+      "limits": [
+        "night-mode",
+        "tripod",
+        "third-party"
+      ],
+      "key": [
+        {
+          "label": "鏡頭",
+          "value": "1x · f/1.48"
+        },
+        {
+          "label": "曝光系統",
+          "value": "夜間模式最長"
+        },
+        {
+          "label": "對焦",
+          "value": "手動無限遠"
+        }
+      ],
+      "must": [
+        {
+          "id": "zoom",
+          "value": "只用 1x，禁止數碼變焦",
+          "why": "只有主鏡能開 f/1.48；超廣角 f/2.2、長焦 f/2.8 都更暗。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.48",
+          "why": "進光量最大。這場不要收到小光圈。"
+        },
+        {
+          "id": "night",
+          "value": "開，選最長時間（腳架上常可到約 10–30 秒）",
+          "why": "Pro 快門上限約 1 秒，拍不到銀河。夜間模式才是長曝通道。"
+        },
+        {
+          "id": "shutter",
+          "value": "不要用原生 1s 當銀河快門",
+          "why": "1 秒只能拍到最亮的星。真正星空走夜間模式或 Halide 等 App。"
+        },
+        {
+          "id": "focus",
+          "value": "手動對焦到無限遠（對最遠燈光再微調）",
+          "why": "黑暗中自動對焦會拉風箱。"
+        },
+        {
+          "id": "live",
+          "value": "關",
+          "why": "長曝不需要 Live 緩衝。"
+        },
+        {
+          "id": "tripod",
+          "value": "必須",
+          "why": "夜間模式長秒數，手持會糊成灰霧。"
+        },
+        {
+          "id": "timer",
+          "value": "3 秒",
+          "why": "避免按快門震動。"
+        }
+      ],
+      "options": [
+        {
+          "id": "wb",
+          "value": "約 3500–4500K；沒有刻度就 AWB",
+          "why": "壓低城市光害的橙光。"
+        },
+        {
+          "id": "mp",
+          "value": "24MP",
+          "why": "夜間堆疊通常不是真正的 48MP 優勢，24MP 更穩。"
+        },
+        {
+          "id": "format",
+          "value": "ProRAW",
+          "why": "星空後期要拉陰影與色溫。"
+        },
+        {
+          "id": "style",
+          "value": "Natural",
+          "why": "不要 Luminous 把光害放大。"
+        },
+        {
+          "id": "ev",
+          "value": "0 ～ +0.3",
+          "why": "先試拍，光害重就降、星星太暗再加。"
+        }
+      ],
+      "flow": [
+        "腳架 + 1x + f/1.48",
+        "手動對焦無限遠",
+        "夜間模式最長",
+        "計時器 3 秒、Live 關",
+        "試拍後調曝光與白平衡"
+      ],
+      "notes": [
+        "遠離光害、避開過亮月光。",
+        "若夜間模式最長仍不夠，改第三方 App 做 10–15 秒單張，不要再盲目加曝光補償。",
+        "對焦完成後不要再碰螢幕。"
+      ]
+    },
+    {
+      "id": "moon",
+      "title": "月亮特寫",
+      "category": "night",
+      "common": true,
+      "summary": "月亮是白天物體。大幅降曝光，用 4x 光學，不要數碼放大。",
+      "lenses": [
+        "4x"
+      ],
+      "limits": [
+        "native",
+        "tripod"
+      ],
+      "key": [
+        {
+          "label": "鏡頭",
+          "value": "4x 光學"
+        },
+        {
+          "label": "曝光",
+          "value": "−1.5～−2.5"
+        },
+        {
+          "label": "快門",
+          "value": "1/250–1/1000"
+        }
+      ],
+      "must": [
+        {
+          "id": "zoom",
+          "value": "4x 光學（100mm），不要再數碼放大",
+          "why": "8x 以上是裁切，月面細節會崩。要更大就後期裁 4x 的 48MP。"
+        },
+        {
+          "id": "ev",
+          "value": "−1.5 ～ −2.5",
+          "why": "月亮被陽光直射，自動曝光會把它打成白燈。"
+        },
+        {
+          "id": "shutter",
+          "value": "約 1/250–1/1000（原生範圍內拉快）",
+          "why": "月面相對運動不快，但手持 4x 容易震。能快則快。"
+        },
+        {
+          "id": "focus",
+          "value": "點兩下月亮後鎖定",
+          "why": "黑夜裡對焦極易飄到天空。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "月面必須離開右緣，才能看到隕石坑。"
+        },
+        {
+          "id": "live",
+          "value": "關",
+          "why": "減少多餘處理，手持更乾脆。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "4x 再裁切需要像素。"
+        },
+        {
+          "id": "wb",
+          "value": "日光",
+          "why": "月面應接近中性灰，不要偏橙。"
+        },
+        {
+          "id": "tripod",
+          "value": "強烈建議",
+          "why": "100mm 等效手持很容易微震。"
+        },
+        {
+          "id": "style",
+          "value": "Natural",
+          "why": "不要把月亮做成黃色濾鏡。"
+        }
+      ],
+      "flow": [
+        "切 4x",
+        "點月亮對焦並鎖曝光",
+        "降 EV 至月面有紋理",
+        "看長條圖"
+      ],
+      "notes": [
+        "「拍月亮」與「拍月光下的風景」是相反設定。月夜風景改 1x、f/1.48、夜間模式、曝光 0～+0.7。",
+        "月亮很小，構圖留一點地景或樹枝當比例。"
+      ]
+    },
+    {
+      "id": "city-night",
+      "title": "城市夜景",
+      "category": "night",
+      "common": true,
+      "summary": "1x f/1.48、夜間模式 Auto、壓招牌高光。手持用 24MP。",
+      "lenses": [
+        "1x",
+        "2x"
+      ],
+      "limits": [
+        "native",
+        "night-mode"
+      ],
+      "key": [
+        {
+          "label": "光圈",
+          "value": "f/1.48"
+        },
+        {
+          "label": "夜間模式",
+          "value": "Auto／開"
+        },
+        {
+          "label": "曝光",
+          "value": "−0.3～−1.0"
+        }
+      ],
+      "must": [
+        {
+          "id": "zoom",
+          "value": "1x 為主",
+          "why": "主鏡最亮。2x 可用；0.5x 夜景噪點與變形都差一截。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.48",
+          "why": "夜景進光優先。要建築全清晰且有腳架，再收到 f/2.8。"
+        },
+        {
+          "id": "night",
+          "value": "Auto；手持不穩或要更乾淨就手動加長",
+          "why": "夜間模式處理暗部，但主體移動時不要鎖太長。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −1.0",
+          "why": "以最亮招牌為戒，不要讓霓虹變成色塊。"
+        },
+        {
+          "id": "focus",
+          "value": "點兩下建築或街道消失點",
+          "why": "暗處對焦會抓錯車燈。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "手持 24MP；腳架靜態可 48MP",
+          "why": "夜拍高像素不一定更細，先求穩定。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "盯高光，不是盯暗部。"
+        },
+        {
+          "id": "style",
+          "value": "Dramatic 或 Natural",
+          "why": "Dramatic 適合濕地反光；Natural 較真實。"
+        },
+        {
+          "id": "tone",
+          "value": "−10 ～ −20",
+          "why": "壓高光、保留夜的黑。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB",
+          "why": "鈉燈、LED、霓虹混光源，手動常更怪。"
+        },
+        {
+          "id": "timer",
+          "value": "靠牆或腳架時用 3 秒",
+          "why": "減少按鍵震動。"
+        }
+      ],
+      "flow": [
+        "1x f/1.48",
+        "夜間模式 Auto",
+        "對建築對焦",
+        "降曝光保霓虹",
+        "看長條圖"
+      ],
+      "notes": [
+        "垂直線用水平儀。超廣角會把大樓拉歪。",
+        "不要把測光點放在最亮的廣告牌上。"
+      ]
+    },
+    {
+      "id": "car-trails",
+      "title": "車軌",
+      "category": "night",
+      "common": true,
+      "summary": "原生最快只到約 1 秒，只能得到短拖影。完整車軌要夜間模式或第三方 2–8 秒。",
+      "lenses": [
+        "1x",
+        "0.5x"
+      ],
+      "limits": [
+        "night-mode",
+        "third-party",
+        "tripod"
+      ],
+      "key": [
+        {
+          "label": "快門",
+          "value": "2–8s（非原生 1s）"
+        },
+        {
+          "label": "光圈",
+          "value": "f/4.0"
+        },
+        {
+          "label": "腳架",
+          "value": "必須"
+        }
+      ],
+      "must": [
+        {
+          "id": "tripod",
+          "value": "必須",
+          "why": "畫面裡靜的東西必須銳利，只有車燈在流動。"
+        },
+        {
+          "id": "shutter",
+          "value": "先試原生 1s；要連續車軌改夜間模式最長或第三方 2–8s",
+          "why": "Pro 快門不能超過約 1 秒。1 秒只適合車流極密的路口。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/4.0（1x）",
+          "why": "收小光圈保護車燈高光，也加深景深。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.7 ～ −1.3",
+          "why": "車燈極亮，先壓再看軌跡是否夠亮。"
+        },
+        {
+          "id": "focus",
+          "value": "手動或點兩下鎖遠景",
+          "why": "暗處不要讓對焦跟著車跑。"
+        },
+        {
+          "id": "live",
+          "value": "關",
+          "why": "固定長曝，不要 Live。"
+        },
+        {
+          "id": "timer",
+          "value": "3 秒",
+          "why": "按下快門的震動會毀靜態部分。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "24MP",
+          "why": "夜間長曝求穩定，不必 48MP。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "車燈一爆，軌跡就變成死白帶。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB",
+          "why": "頭燈偏暖、尾燈偏紅，AWB 較能同時交代。"
+        },
+        {
+          "id": "zoom",
+          "value": "1x 或 0.5x 納入道路引導線",
+          "why": "車軌要有方向，不要只拍一團光。"
+        }
+      ],
+      "flow": [
+        "腳架與水平儀",
+        "1x f/4 對焦遠景",
+        "原生 1s 試拍",
+        "不夠長再改夜間模式／第三方"
+      ],
+      "notes": [
+        "車流密就縮短；車流疏就加長。",
+        "注意安全，不要在行車線上架機。"
+      ]
+    },
+    {
+      "id": "silky-water",
+      "title": "絲絹瀑布／流水",
+      "category": "water",
+      "common": true,
+      "summary": "先用 f/4 + 原生 1 秒。日光太亮就等陰處；要 2 秒以上改夜間模式或第三方。",
+      "lenses": [
+        "1x",
+        "0.5x"
+      ],
+      "limits": [
+        "native",
+        "tripod",
+        "third-party"
+      ],
+      "key": [
+        {
+          "label": "快門",
+          "value": "0.5–1s 原生"
+        },
+        {
+          "label": "光圈",
+          "value": "f/4.0"
+        },
+        {
+          "label": "腳架",
+          "value": "必須"
+        }
+      ],
+      "must": [
+        {
+          "id": "tripod",
+          "value": "必須",
+          "why": "岩石必須銳利，只有水在流動。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/4.0（1x）",
+          "why": "可變光圈最大的意義：沒有 ND 時，用小光圈換較長快門。"
+        },
+        {
+          "id": "shutter",
+          "value": "從 1/2～1s 開始（原生上限約 1s）",
+          "why": "多數流水 1 秒已有絲絹。更長不是 Pro 快門能做的。"
+        },
+        {
+          "id": "live",
+          "value": "關",
+          "why": "不要誤用 Live 長曝；那是另一條路徑且較不可控。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −0.7",
+          "why": "白水高光極易爆。"
+        },
+        {
+          "id": "focus",
+          "value": "點兩下岩石或岸邊",
+          "why": "對靜物，不要對流動的水。"
+        },
+        {
+          "id": "timer",
+          "value": "3 秒",
+          "why": "消除按快門震動。"
+        }
+      ],
+      "options": [
+        {
+          "id": "night",
+          "value": "只在 1s 仍太快、且環境夠暗時用",
+          "why": "大白天夜間模式通常不會給你 2 秒。"
+        },
+        {
+          "id": "format",
+          "value": "ProRAW",
+          "why": "白水高光後期較有救。"
+        },
+        {
+          "id": "mp",
+          "value": "48MP（完全固定時）",
+          "why": "岩石質感值得。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB 或日光",
+          "why": "樹蔭下水容易偏綠，必要時微調。"
+        }
+      ],
+      "flow": [
+        "腳架",
+        "1x f/4",
+        "原生快門 1s",
+        "降曝光保白水",
+        "不夠柔再等陰天或改 App"
+      ],
+      "notes": [
+        "水速愈快，愈不需要超長快門。先 1/2 秒。",
+        "這場與「清晰水花」設定相反。",
+        "iPhone 沒有 ND；陽光直射時應換角度、等雲、或放棄絲絹改拍形狀。"
+      ]
+    },
+    {
+      "id": "water-splash",
+      "title": "清晰水花",
+      "category": "water",
+      "common": true,
+      "summary": "原生快門拉到最快，連拍。不要寫死 1/4000——以機身刻度為準。",
+      "lenses": [
+        "1x",
+        "2x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "快門",
+          "value": "最快（≥1/1000）"
+        },
+        {
+          "label": "連拍",
+          "value": "開"
+        },
+        {
+          "label": "對焦",
+          "value": "預對水花位置"
+        }
+      ],
+      "must": [
+        {
+          "id": "shutter",
+          "value": "拉到原生最快（約 1/1000–1/1600；有更快刻度再用）",
+          "why": "凍結水滴。不要假設一定有 1/4000。"
+        },
+        {
+          "id": "aperture",
+          "value": "自動或 f/1.8–1.48",
+          "why": "快門極快時要進光。不要為了景深收到 f/4。"
+        },
+        {
+          "id": "focus",
+          "value": "預先點在水花會出現的位置並鎖定",
+          "why": "追水花對焦一定慢。"
+        },
+        {
+          "id": "burst",
+          "value": "開",
+          "why": "完美水冠出現在幾十分之一秒。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −0.7",
+          "why": "水花高光保層次。"
+        }
+      ],
+      "options": [
+        {
+          "id": "live",
+          "value": "關",
+          "why": "高速動作以單張連拍為主。"
+        },
+        {
+          "id": "mp",
+          "value": "24MP",
+          "why": "連拍與處理速度優先。"
+        },
+        {
+          "id": "zoom",
+          "value": "1x 或 2x",
+          "why": "不要數碼變焦追水花。"
+        },
+        {
+          "id": "focus",
+          "value": "主體在動再用智慧追蹤",
+          "why": "固定落點用鎖定；衝浪者用追蹤。"
+        }
+      ],
+      "flow": [
+        "快門拉最快",
+        "對預定落點對焦",
+        "開連拍",
+        "略降曝光"
+      ],
+      "notes": [
+        "與絲絹流水完全相反：這裡要時間凍結。",
+        "預測比追拍可靠。"
+      ]
+    },
+    {
+      "id": "starburst",
+      "title": "燈光星芒",
+      "category": "night",
+      "common": true,
+      "summary": "18 Pro 新能力：1x 收到 f/4，點光源才會變成六芒星。",
+      "lenses": [
+        "1x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "光圈",
+          "value": "f/4.0"
+        },
+        {
+          "label": "鏡頭",
+          "value": "必須 1x"
+        },
+        {
+          "label": "曝光",
+          "value": "−0.7～−1.3"
+        }
+      ],
+      "must": [
+        {
+          "id": "zoom",
+          "value": "1x（唯一可變光圈）",
+          "why": "0.5x／4x 光圈固定，星芒弱或沒有。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/4.0",
+          "why": "六葉光圈在最小光圈下衍射最強。f/1.48 只會得到圓形光斑。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.7 ～ −1.3",
+          "why": "光源本身要有形狀，不能爆成白盤。"
+        },
+        {
+          "id": "focus",
+          "value": "點遠景",
+          "why": "星芒在無限遠附近最清楚。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "控制燈點高光。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "48MP（穩定時）",
+          "why": "燈絲與衍射細節細。"
+        },
+        {
+          "id": "style",
+          "value": "Natural 或 Dramatic",
+          "why": "看要真實還是對比。"
+        },
+        {
+          "id": "night",
+          "value": "Auto；不要為了亮而開太長",
+          "why": "過長會讓燈芯糊掉。"
+        }
+      ],
+      "flow": [
+        "確認 1x",
+        "光圈 f/4",
+        "壓曝光",
+        "清潔鏡頭後再拍"
+      ],
+      "notes": [
+        "拍攝前擦鏡頭。油膜會讓星芒變成光暈。",
+        "路燈、太陽從葉縫露出、夜間燈飾都有效。光源愈小、對比愈高，星芒愈利。"
+      ]
+    },
+    {
+      "id": "backlight",
+      "title": "背光",
+      "category": "light",
+      "common": false,
+      "summary": "先決定要剪影還是要保留臉。長條圖必開。",
+      "lenses": [
+        "1x",
+        "2x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "曝光",
+          "value": "剪影 −1／補臉 +0.3"
+        },
+        {
+          "label": "長條圖",
+          "value": "開"
+        },
+        {
+          "label": "對焦",
+          "value": "主體"
+        }
+      ],
+      "must": [
+        {
+          "id": "ev",
+          "value": "剪影 −0.7～−1.3；保留臉 0～+0.7",
+          "why": "同一場背光有兩種照片，先選意圖再調。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "背光高光一定在打架，不能只看預覽。"
+        },
+        {
+          "id": "focus",
+          "value": "點主體（人的臉或輪廓）",
+          "why": "對天空對焦會讓主體糊、曝光更爆。"
+        }
+      ],
+      "options": [
+        {
+          "id": "flash",
+          "value": "人像可考慮補光；風景關",
+          "why": "這是少數閃光燈有意義的場合。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.8–2.8",
+          "why": "適度分離主體；f/1.48 在逆光下焦外容易發糊光斑。"
+        },
+        {
+          "id": "style",
+          "value": "Natural 或 Luminous",
+          "why": "Luminous 幫忙留暗部，剪影則用 Natural。"
+        },
+        {
+          "id": "live",
+          "value": "開",
+          "why": "逆光表情瞬間可以事後選幀。"
+        },
+        {
+          "id": "format",
+          "value": "ProRAW",
+          "why": "逆光動態範圍大。"
+        }
+      ],
+      "flow": [
+        "決定剪影或保留臉",
+        "對主體對焦",
+        "用 EV 走到意圖",
+        "看長條圖"
+      ],
+      "notes": [
+        "不要讓太陽長時間直射鏡頭。",
+        "保留臉時，讓主體擋住太陽或站在陰影邊緣。"
+      ]
+    },
+    {
+      "id": "dark",
+      "title": "陰暗環境",
+      "category": "night",
+      "common": false,
+      "summary": "1x f/1.48 + 夜間模式 Auto。不要同時狂加 EV 又拉長夜間模式。",
+      "lenses": [
+        "1x"
+      ],
+      "limits": [
+        "night-mode"
+      ],
+      "key": [
+        {
+          "label": "光圈",
+          "value": "f/1.48"
+        },
+        {
+          "label": "夜間模式",
+          "value": "Auto"
+        },
+        {
+          "label": "解析度",
+          "value": "24MP"
+        }
+      ],
+      "must": [
+        {
+          "id": "zoom",
+          "value": "1x",
+          "why": "唯一 f/1.48。室內切 0.5x 會立刻變暗變吵。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.48",
+          "why": "進光優先。"
+        },
+        {
+          "id": "night",
+          "value": "Auto；主體靜止才手動加長",
+          "why": "人在動時長曝一定鬼影。"
+        },
+        {
+          "id": "ev",
+          "value": "0 ～ +0.7，不要到 +1 還疊最長夜間模式",
+          "why": "雙重提亮 = 噪點與假細節。"
+        },
+        {
+          "id": "focus",
+          "value": "點兩下主體",
+          "why": "暗處會反覆尋焦。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "24MP",
+          "why": "弱光高像素沒有免費午餐。"
+        },
+        {
+          "id": "live",
+          "value": "關",
+          "why": "減少流程。"
+        },
+        {
+          "id": "style",
+          "value": "Luminous",
+          "why": "提亮可見度，但不要再加 Grain。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB；鎢絲燈室內偏黃可試 3200K 預設",
+          "why": "混合光源先 AWB。"
+        },
+        {
+          "id": "tripod",
+          "value": "靜態場景再用",
+          "why": "沒有腳架就接受較短夜間模式。"
+        }
+      ],
+      "flow": [
+        "1x f/1.48",
+        "夜間模式 Auto",
+        "對主體對焦",
+        "微加 EV",
+        "主體移動就不要加長"
+      ],
+      "notes": [
+        "先靠牆、靠桌穩定身體。",
+        "噪點來自把暗部當白天，不是來自 ISO 數字本身。"
+      ]
+    },
+    {
+      "id": "portrait",
+      "title": "人像",
+      "category": "people",
+      "common": true,
+      "summary": "沒有 f/1.4。光學用 2x + f/1.8；虛化強度用「人像景深」另調。",
+      "lenses": [
+        "2x",
+        "1x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "鏡頭",
+          "value": "2x"
+        },
+        {
+          "label": "光學光圈",
+          "value": "f/1.8"
+        },
+        {
+          "label": "人像景深",
+          "value": "約 f/2.8"
+        }
+      ],
+      "must": [
+        {
+          "id": "portrait-mode",
+          "value": "開（人像模式）",
+          "why": "計算景深、光位與事後調景深都在這裡。"
+        },
+        {
+          "id": "zoom",
+          "value": "優先 2x（48mm）；環境人像才 1x",
+          "why": "2x 變形小、臉部比例自然。1x 靠近會放大鼻子。"
+        },
+        {
+          "id": "aperture",
+          "value": "光學 f/1.8 起步（1x 時）",
+          "why": "18 Pro 沒有 f/1.4。最大是 f/1.48，耳與髮容易失焦，人像先 f/1.8。"
+        },
+        {
+          "id": "depth",
+          "value": "計算景深約 f/2.0–2.8",
+          "why": "這是 Portrait Depth Control，不是機械光圈。太淺會切壞頭髮邊緣。"
+        },
+        {
+          "id": "focus",
+          "value": "智慧對焦追蹤，優先眼睛",
+          "why": "人一動，焦點必須跟著臉。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ +0.3",
+          "why": "保膚色高光，尤其額頭與鼻尖。"
+        },
+        {
+          "id": "mp",
+          "value": "24MP",
+          "why": "人像不靠 48MP，檔案與處理都較輕。"
+        }
+      ],
+      "options": [
+        {
+          "id": "style",
+          "value": "Natural 或 Gold + Soft Skin",
+          "why": "膚色優先。不要 Vibrant。"
+        },
+        {
+          "id": "texture",
+          "value": "Soft Skin（15 左右）",
+          "why": "Styles 3 的質感，不是後期磨皮滑桿。"
+        },
+        {
+          "id": "live",
+          "value": "開",
+          "why": "事後選表情。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB；樹蔭偏綠可改日光",
+          "why": "綠反射是人像大敵。"
+        },
+        {
+          "id": "flash",
+          "value": "通常關；背光例外",
+          "why": "直閃死白。背光才考慮。"
+        }
+      ],
+      "flow": [
+        "切 2x 人像模式",
+        "對眼睛、開追蹤",
+        "光學勿開到 f/1.48 除非很暗",
+        "Depth 留在 f/2.8 附近",
+        "微調 EV"
+      ],
+      "notes": [
+        "主體離背景遠，光學散景才會出現；貼牆站再開大光圈也虛化不了。",
+        "避免正午頂光；陰天、窗邊側光最好。",
+        "光學光圈與人像景深是兩套控制，請分開想。"
+      ],
+      "recipe": "Gold · Tone +10 · Color −10 · Texture Soft Skin · Grain 關"
+    },
+    {
+      "id": "env-portrait",
+      "title": "環境人像",
+      "category": "people",
+      "common": true,
+      "summary": "人要清楚，地方也要認得。景深留在 f/2.8–4，不要全開。",
+      "lenses": [
+        "2x",
+        "1x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "鏡頭",
+          "value": "2x"
+        },
+        {
+          "label": "景深",
+          "value": "f/2.8–4.0"
+        },
+        {
+          "label": "對焦",
+          "value": "眼睛"
+        }
+      ],
+      "must": [
+        {
+          "id": "focus",
+          "value": "眼睛／智慧追蹤",
+          "why": "環境再美，臉糊了就不是人像。"
+        },
+        {
+          "id": "depth",
+          "value": "計算景深 f/2.8–4.0",
+          "why": "要讀得背後的街或山。f/1.48 會把故事虛掉。"
+        },
+        {
+          "id": "aperture",
+          "value": "光學 f/2.8（1x 時）",
+          "why": "與計算景深同一方向：保留環境。"
+        },
+        {
+          "id": "zoom",
+          "value": "約 2x",
+          "why": "壓縮一點空間，又不會太抽離現場。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ +0.3",
+          "why": "兼顧膚色與背景高光。"
+        }
+      ],
+      "options": [
+        {
+          "id": "portrait-mode",
+          "value": "可開，但 Depth 不要太淺",
+          "why": "開人像模式方便事後微調。"
+        },
+        {
+          "id": "style",
+          "value": "Natural 或 Luminous",
+          "why": "現場色彩要可信。"
+        },
+        {
+          "id": "live",
+          "value": "開",
+          "why": "等自然表情。"
+        },
+        {
+          "id": "aspect",
+          "value": "4:3",
+          "why": "後期可裁 4:5 或 16:9。"
+        }
+      ],
+      "flow": [
+        "2x 構圖含環境",
+        "對眼睛",
+        "光圈／Depth 收到 f/2.8–4",
+        "檢查背景是否可讀"
+      ],
+      "notes": [
+        "不要用 0.5x 靠近拍臉。",
+        "先找光線與背景，再請人走進畫面。"
+      ]
+    },
+    {
+      "id": "tilt-shift",
+      "title": "移軸微型感",
+      "category": "place",
+      "common": true,
+      "summary": "小感光元件單靠 f/1.48 變不成移軸鏡。高角度 + 2x／4x + 計算模糊才像模型。",
+      "lenses": [
+        "2x",
+        "4x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "位置",
+          "value": "高處俯拍"
+        },
+        {
+          "label": "鏡頭",
+          "value": "2x–4x"
+        },
+        {
+          "label": "景深",
+          "value": "計算淺景深"
+        }
+      ],
+      "must": [
+        {
+          "id": "zoom",
+          "value": "2x–4x，高處往下拍",
+          "why": "壓縮透視才有玩具感。平視大街只是淺景深街拍。"
+        },
+        {
+          "id": "focus",
+          "value": "手動對在中央那一條「模型帶」",
+          "why": "焦點平面要像一條街道，不是一個點。"
+        },
+        {
+          "id": "depth",
+          "value": "人像／景深控制開得很淺；或後期條狀模糊",
+          "why": "光學 f/1.48 在 24mm 上景深仍偏深，不夠微型。真正效果靠計算或後期。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −0.7",
+          "why": "略增飽和與模型感。"
+        }
+      ],
+      "options": [
+        {
+          "id": "aperture",
+          "value": "若在 1x，可 f/1.48 當輔助",
+          "why": "只是輔助，不是主因。"
+        },
+        {
+          "id": "style",
+          "value": "Vibrant 或 Luminous",
+          "why": "玩具色彩。不要 Natural 太平。"
+        },
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "小車小人才經得起裁。"
+        },
+        {
+          "id": "grid",
+          "value": "開",
+          "why": "俯拍仍要水平。"
+        }
+      ],
+      "flow": [
+        "爬高或找天橋",
+        "2x／4x 俯拍",
+        "焦點放在一條街上",
+        "用景深控制加強條狀虛化"
+      ],
+      "notes": [
+        "適合車輛、軌道、人群、沙盤式市區。",
+        "不要承諾「大光圈 = 移軸鏡」。那是錯誤光學。"
+      ]
+    },
+    {
+      "id": "japanese-fresh",
+      "title": "日系清新",
+      "category": "still",
+      "common": true,
+      "summary": "略過曝、低對比、低飽和。用 Light／Luminous，不要 Vibrant。",
+      "lenses": [
+        "1x",
+        "2x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "曝光",
+          "value": "+0.3～+0.7"
+        },
+        {
+          "label": "風格",
+          "value": "Light／Luminous"
+        },
+        {
+          "label": "色調",
+          "value": "+10～+20"
+        }
+      ],
+      "must": [
+        {
+          "id": "ev",
+          "value": "+0.3 ～ +0.7",
+          "why": "清新感來自「剛剛好的亮」，不是濾鏡。"
+        },
+        {
+          "id": "style",
+          "value": "Light 或 Luminous",
+          "why": "通透、低對比。Dramatic／Vibrant 會立刻不再日系。"
+        },
+        {
+          "id": "tone",
+          "value": "+10 ～ +20",
+          "why": "提亮中間調。"
+        },
+        {
+          "id": "focus",
+          "value": "點主體",
+          "why": "亮畫面更容易看清焦外是否太空。"
+        }
+      ],
+      "options": [
+        {
+          "id": "texture",
+          "value": "Standard 或 Soft Skin",
+          "why": "不要 Film。質感要薄。"
+        },
+        {
+          "id": "grain",
+          "value": "關",
+          "why": "清新路線通常無顆粒。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.8–2.8",
+          "why": "柔和背景，但不要空到只剩顏色。"
+        },
+        {
+          "id": "wb",
+          "value": "AWB 或日光",
+          "why": "可微暖，不要陰綠。"
+        },
+        {
+          "id": "mp",
+          "value": "48MP（日光）",
+          "why": "留白構圖常要裁。"
+        }
+      ],
+      "flow": [
+        "找柔光（窗邊、陰天）",
+        "風格 Light／Luminous",
+        "加 1/3～2/3 檔",
+        "降低對比與飽和"
+      ],
+      "notes": [
+        "白、米、木、淺綠背景最容易成立。",
+        "留白比堆道具重要。",
+        "硬直射光不適合這條路線。"
+      ],
+      "recipe": "Light · Tone +15 · Color −10 · Texture Soft Skin · Grain 關"
+    },
+    {
+      "id": "mountain",
+      "title": "山景／大景深",
+      "category": "place",
+      "common": true,
+      "summary": "1x f/4 讓前景到山脊都清楚。先保天空。",
+      "lenses": [
+        "1x",
+        "0.5x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "光圈",
+          "value": "f/4.0"
+        },
+        {
+          "label": "曝光",
+          "value": "−0.3～−0.7"
+        },
+        {
+          "label": "鏡頭",
+          "value": "1x／0.5x"
+        }
+      ],
+      "must": [
+        {
+          "id": "aperture",
+          "value": "f/4.0（1x）",
+          "why": "這才是大景深風景。f/1.48 會讓前景草糊掉。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −0.7",
+          "why": "山脊與雲的高光比谷底亮。"
+        },
+        {
+          "id": "focus",
+          "value": "對中遠景山體，不要對腳邊草",
+          "why": "超焦距：中遠景清楚，近景也大致能接受。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "天空一爆，山就沒有天氣。"
+        },
+        {
+          "id": "grid",
+          "value": "開",
+          "why": "山脊與地平線歪了比像素不夠更致命。"
+        }
+      ],
+      "options": [
+        {
+          "id": "zoom",
+          "value": "1x 主體；0.5x 大場景；2x 壓縮層次",
+          "why": "層次山用 2x 往往比超廣角更有力量。"
+        },
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "細節與後期裁切。"
+        },
+        {
+          "id": "style",
+          "value": "Natural",
+          "why": "不要把山做成明信片 verdant。"
+        },
+        {
+          "id": "format",
+          "value": "HEIF Max 或 ProRAW",
+          "why": "天地反差大。"
+        }
+      ],
+      "flow": [
+        "水平儀",
+        "1x f/4",
+        "對山體對焦",
+        "壓曝光保雲",
+        "必要時換 2x 壓縮層次"
+      ],
+      "notes": [
+        "超廣角容易把山拍小。先走近或改 1x／2x。",
+        "天空亮就先保天空，暗部後期再提。"
+      ]
+    },
+    {
+      "id": "seascape",
+      "title": "海景／海浪",
+      "category": "water",
+      "common": true,
+      "summary": "先選凍結或柔化。凍結走最快快門；柔化走 f/4 + 1s 腳架。",
+      "lenses": [
+        "1x",
+        "0.5x"
+      ],
+      "limits": [
+        "native",
+        "tripod"
+      ],
+      "key": [
+        {
+          "label": "快門",
+          "value": "凍 1/1000／柔 1s"
+        },
+        {
+          "label": "曝光",
+          "value": "−0.3～−1.0"
+        },
+        {
+          "label": "長條圖",
+          "value": "開"
+        }
+      ],
+      "must": [
+        {
+          "id": "shutter",
+          "value": "凍結：最快快門；柔化：f/4 + 0.5–1s + 腳架",
+          "why": "同一片海兩種語言，不要混。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −1.0",
+          "why": "白浪與海面反光很容易爆。"
+        },
+        {
+          "id": "focus",
+          "value": "對前景浪或礁石",
+          "why": "對到天空會整張後焦。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "海邊螢幕看起來永遠夠亮。"
+        }
+      ],
+      "options": [
+        {
+          "id": "aperture",
+          "value": "凍結時 f/1.8–2.8；柔化必須 f/4",
+          "why": "用光圈換快門時間。"
+        },
+        {
+          "id": "mp",
+          "value": "靜態 48MP",
+          "why": "浪花紋理細。"
+        },
+        {
+          "id": "wb",
+          "value": "日光",
+          "why": "海天色溫穩定。"
+        },
+        {
+          "id": "grid",
+          "value": "開",
+          "why": "海平線不能歪。"
+        }
+      ],
+      "flow": [
+        "決定凍或柔",
+        "水平儀對海平線",
+        "對礁石／浪",
+        "降曝光看白浪"
+      ],
+      "notes": [
+        "沒有偏光鏡時，改變與太陽的夾角比加飽和有效。",
+        "柔化水面務必腳架；否則只是手震。"
+      ]
+    },
+    {
+      "id": "fog",
+      "title": "霧景／雲霧",
+      "category": "light",
+      "common": false,
+      "summary": "測光會把霧當成中灰。要加曝光，不要加對比。",
+      "lenses": [
+        "1x",
+        "2x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "曝光",
+          "value": "+0.3～+1.0"
+        },
+        {
+          "label": "風格",
+          "value": "Luminous"
+        },
+        {
+          "label": "對比",
+          "value": "低"
+        }
+      ],
+      "must": [
+        {
+          "id": "ev",
+          "value": "+0.3 ～ +1.0",
+          "why": "霧是亮的，相機卻把它當中灰，結果拍成髒灰。"
+        },
+        {
+          "id": "style",
+          "value": "Luminous 或 Light",
+          "why": "留住柔層次。Dramatic 會毀霧。"
+        },
+        {
+          "id": "focus",
+          "value": "對可見的山脊或主體",
+          "why": "低對比下對焦會迷航。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "加曝光時防止白霧裁切。"
+        }
+      ],
+      "options": [
+        {
+          "id": "tone",
+          "value": "+5 ～ +15",
+          "why": "提亮但不加對比。"
+        },
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "霧中的細樹幹值得。"
+        },
+        {
+          "id": "zoom",
+          "value": "2x 壓縮層次往往比 0.5x 更好",
+          "why": "超廣角會把霧拍成一片空。"
+        }
+      ],
+      "flow": [
+        "對山脊對焦",
+        "加曝光至霧是亮的",
+        "風格 Luminous",
+        "看長條圖不要死白"
+      ],
+      "notes": [
+        "留白就是構圖。不要因為空而硬塞前景。",
+        "若要山脊浮出，再略降 EV。"
+      ]
+    },
+    {
+      "id": "architecture",
+      "title": "建築／古蹟",
+      "category": "place",
+      "common": true,
+      "summary": "水平比像素重要。1x–2x，少用 0.5x。1x 可收到 f/4。",
+      "lenses": [
+        "1x",
+        "2x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "水平儀",
+          "value": "必須開"
+        },
+        {
+          "label": "鏡頭",
+          "value": "1x–2x"
+        },
+        {
+          "label": "光圈",
+          "value": "f/2.8–4.0"
+        }
+      ],
+      "must": [
+        {
+          "id": "grid",
+          "value": "開",
+          "why": "垂直線一歪，再高像素也像遊客照。"
+        },
+        {
+          "id": "zoom",
+          "value": "1x 或 2x；少用 0.5x",
+          "why": "超廣角邊緣拉伸柱子與門。要廣就退後，不要靠 0.5x 硬塞。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/2.8–4.0（1x）",
+          "why": "建築要邊角與深處都清楚。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ −0.7",
+          "why": "白牆、天空容易爆。"
+        },
+        {
+          "id": "focus",
+          "value": "建築主體中段",
+          "why": "對最近的欄杆會讓立面糊。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "48MP",
+          "why": "磚、木、雕花經得起放大。"
+        },
+        {
+          "id": "style",
+          "value": "Natural 或 Dramatic",
+          "why": "石材用 Dramatic；木與粉牆用 Natural。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "白牆是高光陷阱。"
+        }
+      ],
+      "flow": [
+        "水平儀對垂直線",
+        "1x 或退後",
+        "f/2.8–4",
+        "略降曝光"
+      ],
+      "notes": [
+        "相機端平，不要仰拍再靠後期拉——手機寬角畸變會更醜。",
+        "對稱建築就把中線對準格線。"
+      ]
+    },
+    {
+      "id": "street",
+      "title": "街拍／行人",
+      "category": "people",
+      "common": true,
+      "summary": "2x–4x 保持距離，追蹤對焦，快門 1/250 以上。",
+      "lenses": [
+        "2x",
+        "4x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "鏡頭",
+          "value": "2x–4x"
+        },
+        {
+          "label": "對焦",
+          "value": "智慧追蹤"
+        },
+        {
+          "label": "快門",
+          "value": "1/250–1/1000"
+        }
+      ],
+      "must": [
+        {
+          "id": "focus",
+          "value": "智慧對焦追蹤",
+          "why": "行人不會為你停。"
+        },
+        {
+          "id": "shutter",
+          "value": "至少 1/250；奔跑 1/1000",
+          "why": "街頭手持加移動主體，慢快門只會雙糊。"
+        },
+        {
+          "id": "zoom",
+          "value": "2x–4x",
+          "why": "距離產生 candid，也減少廣角畸變。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ +0.3",
+          "why": "招牌與臉同時存在，微調即可。"
+        }
+      ],
+      "options": [
+        {
+          "id": "live",
+          "value": "開",
+          "why": "不可預測的手勢可以事後選。"
+        },
+        {
+          "id": "style",
+          "value": "Natural、Quiet 或單色",
+          "why": "街頭容得下低飽和或黑白。"
+        },
+        {
+          "id": "mp",
+          "value": "24MP",
+          "why": "反應速度優先。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.8–2.8（在 1x 時）",
+          "why": "一點分離，但仍要讀得懂街道。"
+        }
+      ],
+      "flow": [
+        "先選背景與光線",
+        "2x／4x",
+        "開追蹤",
+        "快門不低於 1/250",
+        "等人走進畫面"
+      ],
+      "notes": [
+        "先背景、再等人，比追著人跑穩得多。",
+        "尊重私人空間與場地規定。"
+      ]
+    },
+    {
+      "id": "sports",
+      "title": "動態／運動",
+      "category": "motion",
+      "common": true,
+      "summary": "快門優先拉最快，開追蹤與連拍。光線不夠就開 f/1.48，不要死守 1/4000。",
+      "lenses": [
+        "2x",
+        "4x",
+        "1x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "快門",
+          "value": "最快"
+        },
+        {
+          "label": "對焦",
+          "value": "智慧追蹤"
+        },
+        {
+          "label": "連拍",
+          "value": "開"
+        }
+      ],
+      "must": [
+        {
+          "id": "shutter",
+          "value": "原生最快（約 1/1000–1/1600）",
+          "why": "以機身刻度為準。沒有 1/4000 就用最快，不要停在 1/250。"
+        },
+        {
+          "id": "focus",
+          "value": "智慧對焦追蹤",
+          "why": "運動攝影焦點必須跟著人。"
+        },
+        {
+          "id": "burst",
+          "value": "開",
+          "why": "關鍵動作在連拍裡挑。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.48–1.8（1x）",
+          "why": "快門吃光，光圈要開。"
+        }
+      ],
+      "options": [
+        {
+          "id": "live",
+          "value": "關",
+          "why": "減少處理延遲。"
+        },
+        {
+          "id": "mp",
+          "value": "24MP",
+          "why": "緩衝與對焦優先。"
+        },
+        {
+          "id": "zoom",
+          "value": "2x–4x 保持距離",
+          "why": "場邊常用長焦。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ +0.3",
+          "why": "天空或燈光下避免爆高光。"
+        },
+        {
+          "id": "night",
+          "value": "關",
+          "why": "夜間模式長曝與運動互斥。"
+        }
+      ],
+      "flow": [
+        "快門拉最快",
+        "追蹤開",
+        "連拍開",
+        "預判動線提前構圖"
+      ],
+      "notes": [
+        "弱光不要盲目追求極限快門，寧可 ISO／計算攝影，也不要 1/2000 配一團噪點。",
+        "對焦點提前放在選手會經過的位置。"
+      ]
+    },
+    {
+      "id": "food",
+      "title": "食物／餐廳",
+      "category": "still",
+      "common": true,
+      "summary": "1x、略加曝光、白碟看長條圖。鎢絲燈偏黃就改燈光預設。",
+      "lenses": [
+        "1x",
+        "2x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "鏡頭",
+          "value": "1x"
+        },
+        {
+          "label": "曝光",
+          "value": "0～+0.7"
+        },
+        {
+          "label": "白平衡",
+          "value": "AWB／燈光"
+        }
+      ],
+      "must": [
+        {
+          "id": "zoom",
+          "value": "1x；不要 0.5x 貼著盤子",
+          "why": "超廣角會把圓盤拉成蛋形，也把桌面透視誇張化。"
+        },
+        {
+          "id": "focus",
+          "value": "主菜最前方那一口",
+          "why": "食物焦點應在最想被吃的位置。"
+        },
+        {
+          "id": "ev",
+          "value": "0 ～ +0.7",
+          "why": "餐廳偏暗，但白碟、湯汁反光會爆。"
+        },
+        {
+          "id": "histogram",
+          "value": "開",
+          "why": "專門盯白色餐盤。"
+        }
+      ],
+      "options": [
+        {
+          "id": "wb",
+          "value": "AWB；明顯偏黃改「燈光／3200K」",
+          "why": "鎢絲＋窗光混合時 AWB 會搖擺。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/1.8–2.8",
+          "why": "突出主菜，保留一點桌面。f/1.48 可能只清楚一片香菜。"
+        },
+        {
+          "id": "style",
+          "value": "Natural 或 Gold，飽和克制",
+          "why": "食物失真比欠飽和更糟。"
+        },
+        {
+          "id": "flash",
+          "value": "關",
+          "why": "油亮表面會反白塊。"
+        }
+      ],
+      "flow": [
+        "擦鏡頭",
+        "1x 45° 或微高角度",
+        "對主菜前緣",
+        "看白碟有沒有爆"
+      ],
+      "notes": [
+        "油煙與指紋會讓燈光發糊，先擦鏡頭。",
+        "全桌用稍高角度；單品用 45°。"
+      ]
+    },
+    {
+      "id": "macro",
+      "title": "花卉／微距",
+      "category": "still",
+      "common": true,
+      "summary": "對花蕊。光圈收到 f/2.8–4，否則景深只有一層花瓣。",
+      "lenses": [
+        "1x",
+        "0.5x",
+        "2x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "對焦",
+          "value": "花蕊"
+        },
+        {
+          "label": "光圈／景深",
+          "value": "f/2.8–4.0"
+        },
+        {
+          "label": "微距",
+          "value": "Auto"
+        }
+      ],
+      "must": [
+        {
+          "id": "focus",
+          "value": "花蕊或最重要的那一層花瓣",
+          "why": "微距景深極淺，對葉子等於整朵糊。"
+        },
+        {
+          "id": "aperture",
+          "value": "f/2.8–4.0（1x）",
+          "why": "近距離 f/1.48 的清晰帶可能不到一公分。"
+        },
+        {
+          "id": "depth",
+          "value": "若開人像／景深，同樣留在 f/2.8–4",
+          "why": "計算景深太淺會切壞花瓣邊緣。"
+        },
+        {
+          "id": "macro",
+          "value": "Auto／需要貼拍時允許切 0.5x 微距",
+          "why": "超廣角微距能靠近，但邊緣變形大。"
+        },
+        {
+          "id": "ev",
+          "value": "−0.3 ～ +0.3",
+          "why": "白花、露水是高光。"
+        }
+      ],
+      "options": [
+        {
+          "id": "mp",
+          "value": "48MP（無風、穩定）",
+          "why": "花瓣紋理與後期裁切。"
+        },
+        {
+          "id": "style",
+          "value": "Natural 或 Luminous",
+          "why": "花色已經夠，不要 Vibrant。"
+        },
+        {
+          "id": "zoom",
+          "value": "2x 從稍遠壓縮背景",
+          "why": "背景更容易變成色塊。"
+        },
+        {
+          "id": "burst",
+          "value": "有風時開",
+          "why": "花一晃焦就跑。"
+        }
+      ],
+      "flow": [
+        "決定 1x 或微距",
+        "光圈收到 f/2.8–4",
+        "對花蕊",
+        "身體靠穩再按"
+      ],
+      "notes": [
+        "背景愈簡單，花愈突出。",
+        "微距時呼吸都會跑焦，吐氣後再按快門。"
+      ]
+    },
+    {
+      "id": "video-24p",
+      "title": "影片 24p 電影感",
+      "category": "motion",
+      "common": true,
+      "summary": "24fps 配 1/48–1/50 快門。白天用 f/4 代替 ND 減光。",
+      "lenses": [
+        "1x",
+        "2x",
+        "4x"
+      ],
+      "limits": [
+        "native"
+      ],
+      "key": [
+        {
+          "label": "幀率",
+          "value": "24fps"
+        },
+        {
+          "label": "快門",
+          "value": "1/48–1/50"
+        },
+        {
+          "label": "光圈",
+          "value": "日光 f/4"
+        }
+      ],
+      "must": [
+        {
+          "id": "shutter",
+          "value": "24fps → 1/48 或 1/50；30fps → 1/60",
+          "why": "180° 快門法則。太快會變「電視新聞」般生硬。"
+        },
+        {
+          "id": "aperture",
+          "value": "日光 f/4；室內 f/1.8–1.48",
+          "why": "這是可變光圈對拍片最大的意義：白天不必再夾 ND。"
+        },
+        {
+          "id": "zoom",
+          "value": "鎖定一個焦段再開錄",
+          "why": "錄影中途數碼變焦會暴露品質。先 1x／2x／4x 選定。"
+        },
+        {
+          "id": "focus",
+          "value": "智慧追蹤或手動鎖定",
+          "why": "避免錄影拉風箱。"
+        }
+      ],
+      "options": [
+        {
+          "id": "format",
+          "value": "日常 4K30 HDR；要調色用 Log 2／ProRes",
+          "why": "Log 不是日常濾鏡，是後期流程。"
+        },
+        {
+          "id": "style",
+          "value": "錄影前定風格，或 Log 後期再上",
+          "why": "不要邊錄邊猛轉色盤。"
+        },
+        {
+          "id": "grid",
+          "value": "開",
+          "why": "移動鏡頭時水平更難。"
+        }
+      ],
+      "flow": [
+        "切影片 24fps",
+        "快門 1/48",
+        "日光收到 f/4",
+        "鎖定焦段與對焦再錄"
+      ],
+      "notes": [
+        "動作片／運動改 4K60，快門約 1/120，不要硬套 24p。",
+        "f/4 仍過亮才考慮 ND 或換角度。多數晴天 f/4 + 1/48 已能工作。"
+      ]
+    }
+  ]
+}
