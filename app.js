@@ -1,3 +1,9 @@
+const EMOJI = {
+  aperture: "◎", depth: "🌀", shutter: "⏱️", night: "🌙", ev: "☀️", focus: "🎯", wb: "🌡️",
+  zoom: "🔍", mp: "📐", format: "🗂️", style: "🎨", texture: "✨", grain: "🌫️", tone: "◐",
+  histogram: "📊", live: "📸", burst: "⚡", timer: "⏳", grid: "▦", "portrait-mode": "👤",
+  macro: "🔬", tripod: "📍", flash: "💡", aspect: "▭",
+};
 const THEME_KEY = "iphone18proTheme.v2";
 const FAV_KEY = "iphone18proFavorites.v2";
 const $ = (s, el = document) => el.querySelector(s);
@@ -176,8 +182,8 @@ function settingTable(title, hint, rows, cls, params) {
     <h2>${title}</h2>
     <p class="muted">${hint}</p>
     <table><thead><tr><th>參數</th><th>設定</th><th class="hide-sm">原因</th></tr></thead>
-    <tbody>${rows.map((r) => `<tr><td class="${cls}">${esc(params[r.id])}</td><td><strong>${esc(r.value)}</strong></td><td class="hide-sm">${esc(r.why)}</td></tr>`).join("")}</tbody></table>
-    <div class="why-mobile">${rows.map((r) => `<p><strong>${esc(params[r.id])} — </strong>${esc(r.why)}</p>`).join("")}</div>
+    <tbody>${rows.map((r) => `<tr><td class="${cls}">${EMOJI[r.id] || ""} ${esc(params[r.id])}</td><td><strong>${esc(r.value)}</strong></td><td class="hide-sm">${esc(r.why)}</td></tr>`).join("")}</tbody></table>
+    <div class="why-mobile">${rows.map((r) => `<p><strong>${EMOJI[r.id] || ""} ${esc(params[r.id])} — </strong>${esc(r.why)}</p>`).join("")}</div>
   </section>`;
 }
 
@@ -242,8 +248,10 @@ function gearPage(data) {
     <p>${esc(H.styles)}</p>
     <p>${esc(H.formats)}</p>
     <ul>${H.globalDefaults.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>
-    <h2>影片（24p）</h2>
-    <p>24fps 配 1/48 或 1/50 快門。晴天收到 f/4，多數情況不必再夾 ND。運動改 4K60 + 約 1/120。</p>
+    <h2>影片進階</h2>
+    <p>動作模式（Action Mode）、ProRes / Apple Log、電影效果後製最高 4K60、4K 縮時（Dolby Vision）、音訊混音（Audio Mix）、空間音訊（Spatial Audio）。24p 用 1/48 或 1/50，日光把鏡頭光圈收到小。</p>
+    <h2>拍攝模式</h2>
+    <p>拍照（Photo）、人像（Portrait，六款光線）、錄影（Video）、電影級（Cinematic）、慢動作（Slo-mo）、縮時攝影（Time Lapse）、全景（Pano）、空間（Spatial）。</p>
   </div>`;
 }
 
